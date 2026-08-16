@@ -1,4 +1,4 @@
-package projeto_contabanco;
+package projeto04;
 
 public class ContaBanco {
    public int numConta;
@@ -63,14 +63,14 @@ public class ContaBanco {
            this.setSaldo(50);
         }else if (this.getTipo().equals("cp")){
            this.setSaldo(150);
-        }else{
         }
+       System.out.println("Conta aberta com sucesso");
    }
    
    public void fecharConta(){
        if (this.getSaldo() == 0){
-           System.out.println("Conta fechada com sucesso");
            this.setStatus(false);
+           System.out.println("Conta fechada com sucesso");
        }else if (this.getSaldo() < 0){
            System.out.println("ERRO, voce esta devendo");
        }else{
@@ -78,17 +78,17 @@ public class ContaBanco {
        }
    }
    
-   public float depositar(float d){
-       if (this.isStatus() == true){
+   public void depositar(float d){
+       if (this.isStatus()){
            this.setSaldo(this.getSaldo() + d); 
+           System.out.println("Depósito realizado na conta de " + this.getDono());
        }else{
            System.out.println("ERRO, abra uma conta primeiro");
        }
-       return saldo;
    }
    
-   public float sacar(float s){
-       if (this.isStatus() == true){
+   public void sacar(float s){
+       if (this.isStatus()){
            if (s <= this.getSaldo()){
                this.setSaldo(this.getSaldo() - s);
                System.out.println("Voce sacou " + s + ", seu novo saldo é " + this.getSaldo());
@@ -98,30 +98,31 @@ public class ContaBanco {
                }else{
            System.out.println("ERRO, abra uma conta primeiro");
        }
-       return saldo;
    }
    
    
-   public float pagarMensal(){
-       float v = 0;
+   public void pagarMensal(){
+       int v = 0;
        if (this.getTipo().equals("cc")){
            v = 12;
        }else if (this.getTipo().equals("cp")){
            v = 20;
        }
-       if (this.isStatus() == true){
+       if (this.isStatus()){
            if (this.getSaldo() > v){
                this.setSaldo(saldo - v);
+               System.out.println("Mensalidade paga com sucesso por " + this.getDono());
            }else{
                System.out.println("ERRO, saldo insuficiente");
            }
        }else{
            System.out.println("ERRO, a conta nao esta aberta");
        }       
-       return saldo;
+
    }
    
-   public void status(){
+   public void estadoAtual(){
+       System.out.println("--------------------------------");
         System.out.println("NumConta: " + this.getNumConta());
         System.out.println("Dono: " + this.getDono());
         System.out.println("Tipo: " + this.getTipo());
