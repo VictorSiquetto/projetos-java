@@ -1,7 +1,7 @@
 
-package projeto01;
+package projeto02;
 
-public class Projeto01 {
+public class Projeto02 {
 
     public static void main(String[] args) {
         Caneta c1 = new Caneta();

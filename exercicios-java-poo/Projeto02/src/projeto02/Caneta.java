@@ -1,5 +1,5 @@
 
-package projeto01;
+package projeto02;
 
 
 public class Caneta {
