@@ -93,11 +93,11 @@ public class Livro implements Publicacao{
 
     @Override
     public void avancarPag() {
-        this.pagAtual++;
+        this.setPagAtual(this.getPagAtual() + 1);
     }
 
     @Override
     public void voltarPag() {
-        this.pagAtual--;
+        this.setPagAtual(this.getPagAtual() - 1);
     }
 }

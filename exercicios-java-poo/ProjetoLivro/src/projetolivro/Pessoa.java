@@ -12,7 +12,7 @@ public class Pessoa {
     }
     
     public void fazerAniver(){
-        this.idade++;
+        this.setIdade(this.getIdade() + 1);
     }
 
     public String getNome() {
