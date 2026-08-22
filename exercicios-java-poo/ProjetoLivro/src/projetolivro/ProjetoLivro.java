@@ -13,6 +13,7 @@ public class ProjetoLivro {
         l[1] = new Livro("Dom Quixote", "Miguel de Cervantes", 350, p[1]);
         l[2] = new Livro("O Pequeno Principe", "Antoine de Saint-Exupery", 240, p[0]);
         
+        p[0].fazerAniver();
         l[0].abrir();
         l[0].folhear(55);
         l[0].avancarPag();
